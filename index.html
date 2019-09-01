@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Από τι γράμμα ξεκινά η λέξη;</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../bower_components/bootstrap4/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/2-col-portfolio.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Πρώτο γράμμα</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Αρχική
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Page Heading -->
+      <h1 id="alx_header" class="my-4">Από τι γράμμα ξεκινά η λέξη;</h1>
+
+      <div class="row" id="image">
+        
+      </div>
+
+      <div class="row">
+        <div class="col" id="alx0"></div>
+      </div>
+      <div class="row">
+        <div class="col" id="alx1"></div>
+        <div class="col" id="alx2"></div>
+        <div class="col" id="alx3"></div>
+      </div>
+
+      <!-- /.row -->
+
+      <br /><br />
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyleft ale3andro.gr 09-2019 - revision 0.1</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../bower_components/bootstrap4/dist/js/bootstrap.min.js"></script>
+    <script>
+      $( function() {
+
+        images = [
+          ['keyboard0.jpg', 'Π', 'Α', 'Β'],
+          ['monitor0.jpg', 'Ο', 'Π', 'Ε'],
+          ['keyboard1.jpg', 'Π', 'Ζ', 'Ω'],
+          ['computer_webcam1.jpg', 'Κ', 'Ε', 'Λ'],
+          ['printer1.png', 'Ε', 'Π', 'Σ'],
+          ['computer_speakers1.jpeg', 'Η', 'Δ', 'Β'],
+          ['computer_speakers0.jpg', 'Η', 'Ξ', 'Γ'],
+          ['monitor1.jpg', 'Ο', 'Α', 'Ε'],
+          ['computer_webcam0.jpg', 'Κ', 'Χ', 'Ζ'],
+          ['printer0.jpg', 'Ε', 'Α', 'Π'],
+          ['computer_case_1.jpg', 'Κ', 'Υ', 'Ι'],
+          ['computer_scanner1.jpg', 'Σ', 'Δ', 'Κ'],
+          ['computer_scanner0.jpg', 'Σ', 'Λ', 'Ξ'],
+          ['mouse0.jpg', 'Π', 'Ψ', 'Ω'],
+          ['mouse1.jpeg', 'Π', 'Α', 'Υ'],
+          ['computer_projector1.jpg', 'Π', 'Ρ', 'Δ'],
+          ['computer_projector0.jpg', 'Π', 'Τ', 'Α'],
+          ['computer_case_0.jpg', 'Κ', 'Ο', 'Ζ'],
+        ];
+      });
+
+      $( document ).ready(function() {
+        counter=0;
+        $('#alx1').click(function() {
+          $('#alx1').html('<img src="emojis/happy_emoji.png">');
+          if (counter==(images.length-1)) {
+            $('#alx0').html('<img width="461" height="200" src="emojis/emojis-high-five.gif">');
+            $('#alx1').html('');
+            $('#alx2').html('');
+            $('#alx3').html('');
+          }
+          else {
+            counter+=1;
+            prep_challenge();
+          }
+        });
+        $('#alx2').click(function() {
+          $('#alx2').html('<img src="emojis/sad_emoji.png">');
+        });
+        $('#alx3').click(function() {
+          $('#alx3').html('<img src="emojis/sad_emoji.png">');
+        });
+        prep_challenge();
+      });
+
+      function prep_challenge() {
+        var number = 1 + Math.floor(Math.random() * 3);
+        console.log(number);
+        if (number==1) {
+            $("#alx1").insertBefore($("#alx2"));
+            $("#alx2").insertBefore($("#alx3"));
+        }
+        if (number==2) { 
+            $("#alx2").insertBefore($("#alx1")); 
+            $("#alx1").insertBefore($("#alx3"));
+
+        }
+        if (number==3) { 
+            $("#alx2").insertBefore($("#alx1")); 
+            $("#alx3").insertBefore($("#alx2")); 
+        }
+        $('#alx_header').html('Από τι γράμμα ξεκινά η λέξη; ' + (counter+1) + '/' + images.length);
+        $('#alx0').html('<img width="400" height="200" src="pc_parts/' + images[counter][0] + '">');
+        $('#alx1').html('<img src="letters/' + images[counter][1] + '.png">');
+        $('#alx2').html('<img src="letters/' + images[counter][2] + '.png">');
+        $('#alx3').html('<img src="letters/' + images[counter][3] + '.png">');
+      }
+      
+</script>
+
+  </body>
+
+</html>
