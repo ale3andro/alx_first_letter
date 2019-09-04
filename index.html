@@ -107,10 +107,19 @@
         $('#alx1').click(function() {
           $('#alx1').html('<img src="emojis/happy_emoji.png">');
           if (counter==(images.length-1)) {
-            $('#alx0').html('<img width="461" height="200" src="emojis/emojis-high-five.gif">');
-            $('#alx1').html('');
-            $('#alx2').html('');
-            $('#alx3').html('');
+            if (sessionStorage.getItem("quest_ordinal") === null) {
+              $('#alx0').html('<img width="461" height="200" src="emojis/emojis-high-five.gif">');
+              $('#alx1').html('');
+              $('#alx2').html('');
+              $('#alx3').html('');
+            } else {
+              $('#alx0').html('<img width="461" height="200" src="emojis/emojis-high-five.gif"><br /><a href="' + sessionStorage.getItem("quest_return") +'">Επιστροφή</a>');
+              sessionStorage.setItem("quest" + sessionStorage.getItem("quest_ordinal") + "_is_complete", "yes");
+              $('#alx1').html('');
+              $('#alx2').html('');
+              $('#alx3').html('');
+            }
+            
           }
           else {
             counter+=1;
