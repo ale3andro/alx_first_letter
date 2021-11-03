@@ -68,7 +68,7 @@
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyleft ale3andro.gr 09-2019 - revision 0.1</p>
+        <p class="m-0 text-center text-white">Copyleft ale3andro.gr 11-2021 - revision 0.2</p>
       </div>
       <!-- /.container -->
     </footer>
@@ -79,7 +79,6 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
       $( function() {
-
         images = [
           ['keyboard0.jpg', 'Π', 'Α', 'Β'],
           ['monitor0.jpg', 'Ο', 'Π', 'Ε'],
@@ -104,7 +103,7 @@
 
       $( document ).ready(function() {
         counter=0;
-        $('#alx1').click(function() {
+        $('#alx1').dblclick(function() {
           $('#alx1').html('<img src="emojis/happy_emoji.png">');
           if (counter==(images.length-1)) {
             if (sessionStorage.getItem("quest_ordinal") === null) {
@@ -126,10 +125,10 @@
             prep_challenge();
           }
         });
-        $('#alx2').click(function() {
+        $('#alx2').dblclick(function() {
           $('#alx2').html('<img src="emojis/sad_emoji.png">');
         });
-        $('#alx3').click(function() {
+        $('#alx3').dblclick(function() {
           $('#alx3').html('<img src="emojis/sad_emoji.png">');
         });
         prep_challenge();

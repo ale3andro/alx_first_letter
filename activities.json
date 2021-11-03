@@ -1,0 +1,36 @@
+[   
+    {
+      "id": "a001",
+      "description" : "Από τι γράμμα ξεκινά η λέξη;",
+      "url_subfolder" : "pc_parts",
+      "images" : [
+          { "image" : "keyboard0.jpg", "letter0" : "Π", "letter1" : "Α", "letter2" : "Β" },
+          { "image" : "monitor0.jpg", "letter0" : "Ο", "letter1" : "Ε", "letter2" : "Ζ" },
+          { "image" : "keyboard1.jpg", "letter0" : "Π", "letter1" : "Λ", "letter2" : "Ω" },
+          { "image" : "computer_webcam1.jpg", "letter0" : "Κ", "letter1" : "Υ", "letter2" : "Ρ" },
+          { "image" : "printer1.png", "letter0" : "Ε", "letter1" : "Ζ", "letter2" : "Ψ" },
+          { "image" : "computer_speakers1.jpeg", "letter0" : "Η", "letter1" : "Ρ", "letter2" : "Ι" },
+          { "image" : "computer_speakers0.jpg", "letter0" : "Η", "letter1" : "Σ", "letter2" : "Δ" },
+          { "image" : "monitor1.jpg", "letter0" : "Ο", "letter1" : "Γ", "letter2" : "Α" },
+          { "image" : "computer_webcam0.jpg", "letter0" : "Κ", "letter1" : "Ξ", "letter2" : "Δ" },
+          { "image" : "printer0.jpg", "letter0" : "Ε", "letter1" : "Ν", "letter2" : "Ρ" },
+          { "image" : "computer_case_1.jpg", "letter0" : "Κ", "letter1" : "Δ", "letter2" : "Μ" },
+          { "image" : "computer_scanner1.jpg", "letter0" : "Σ", "letter1" : "Ι", "letter2" : "Ε" },
+          { "image" : "computer_scanner0.jpg", "letter0" : "Σ", "letter1" : "Λ", "letter2" : "Κ" },
+          { "image" : "mouse0.jpg", "letter0" : "Π", "letter1" : "Χ", "letter2" : "Β" },
+          { "image" : "mouse1.jpeg", "letter0" : "Π", "letter1" : "Μ", "letter2" : "Ν" },
+          { "image" : "computer_projector1.jpg", "letter0" : "Π", "letter1" : "Α", "letter2" : "Β" },
+          { "image" : "computer_projector0.jpg", "letter0" : "Π", "letter1" : "Γ", "letter2" : "Ω" },
+          { "image" : "computer_case_0.jpg", "letter0" : "Κ", "letter1" : "Π", "letter2" : "Α" }
+      ]
+    },
+    {
+        "id": "a002",
+        "description" : "Από τι γράμμα ξεκινά η λέξη;",
+        "url_subfolder" : "pc_parts",
+        "images" : [
+          { "image" : "keyboard0.jpg", "letter0" : "Π", "letter1" : "Α", "letter2" : "Β" },
+          { "image" : "monitor0.jpg", "letter0" : "Ο", "letter1" : "Ε", "letter2" : "Ζ" }
+         ]
+      }
+]
