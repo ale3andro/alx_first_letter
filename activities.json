@@ -3,6 +3,7 @@
       "id": "a001",
       "description" : "Από τι γράμμα ξεκινά η λέξη;",
       "url_subfolder" : "pc_parts",
+      "jquery_function" : "dblclick",
       "images" : [
           { "image" : "keyboard0.jpg", "letter0" : "Π", "letter1" : "Α", "letter2" : "Β" },
           { "image" : "monitor0.jpg", "letter0" : "Ο", "letter1" : "Ε", "letter2" : "Ζ" },
@@ -26,8 +27,9 @@
     },
     {
         "id": "a002",
-        "description" : "Από τι γράμμα ξεκινά η λέξη;",
+        "description" : "ALEJ Από τι γράμμα ξεκινά η λέξη;",
         "url_subfolder" : "pc_parts",
+        "jquery_function" : "click",
         "images" : [
           { "image" : "keyboard0.jpg", "letter0" : "Π", "letter1" : "Α", "letter2" : "Β" },
           { "image" : "monitor0.jpg", "letter0" : "Ο", "letter1" : "Ε", "letter2" : "Ζ" }

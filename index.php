@@ -1,3 +1,44 @@
+<?php
+            $id = $_GET['id'];
+            $string = file_get_contents("activities.json");
+            $json_a = json_decode($string,true);
+    
+            $valid_keys = array();
+            $description = '';
+            $url_subfolder = '';
+            $images = '';
+            $jq_function = '';
+            $jq_function_message = '';
+            foreach ($json_a as $key => $value)
+                array_push($valid_keys, $value['id']);
+            
+            if (!in_array($id, $valid_keys))
+                $id='a001';
+
+            $images = " images = [";
+
+            foreach ($json_a as $key => $value){
+                if ($id==$value['id']) {
+                    $description = $value['description'];
+                    $url_subfolder = $value['url_subfolder'];
+                    $jq_function = $value['jquery_function'];
+                    foreach ($value["images"] as $bkey => $bvalue) {
+                        $images .= "['" . $bvalue['image'] . "', '" . $bvalue["letter0"] . "', '" . $bvalue["letter1"] . "', '" . $bvalue["letter2"] . "'],";
+                    }
+                }
+            }
+            $images .= "];";
+            
+            if ($jq_function=='click')
+                $jq_function_message = 'μονό κλικ';
+            else {
+                $jq_function='dblclick';
+                $jq_function_message = 'διπλό κλικ';
+            }
+                
+        ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,7 +84,8 @@
     <div class="container">
 
       <!-- Page Heading -->
-      <h1 id="alx_header" class="my-4">Από τι γράμμα ξεκινά η λέξη;</h1>
+      <h1 id="alx_header" class="my-4"><?php echo $description; ?></h1>
+      <h3><?php echo $jq_function_message; ?></h3>
 
       <div class="row" id="image">
         
@@ -79,31 +121,14 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
       $( function() {
-        images = [
-          ['keyboard0.jpg', 'Π', 'Α', 'Β'],
-          ['monitor0.jpg', 'Ο', 'Π', 'Ε'],
-          ['keyboard1.jpg', 'Π', 'Ζ', 'Ω'],
-          ['computer_webcam1.jpg', 'Κ', 'Ε', 'Λ'],
-          ['printer1.png', 'Ε', 'Π', 'Σ'],
-          ['computer_speakers1.jpeg', 'Η', 'Δ', 'Β'],
-          ['computer_speakers0.jpg', 'Η', 'Ξ', 'Γ'],
-          ['monitor1.jpg', 'Ο', 'Α', 'Ε'],
-          ['computer_webcam0.jpg', 'Κ', 'Χ', 'Ζ'],
-          ['printer0.jpg', 'Ε', 'Α', 'Π'],
-          ['computer_case_1.jpg', 'Κ', 'Υ', 'Ι'],
-          ['computer_scanner1.jpg', 'Σ', 'Δ', 'Κ'],
-          ['computer_scanner0.jpg', 'Σ', 'Λ', 'Ξ'],
-          ['mouse0.jpg', 'Π', 'Ψ', 'Ω'],
-          ['mouse1.jpeg', 'Π', 'Α', 'Υ'],
-          ['computer_projector1.jpg', 'Π', 'Ρ', 'Δ'],
-          ['computer_projector0.jpg', 'Π', 'Τ', 'Α'],
-          ['computer_case_0.jpg', 'Κ', 'Ο', 'Ζ'],
-        ];
+        <?php
+            echo $images;
+        ?>     
       });
 
       $( document ).ready(function() {
         counter=0;
-        $('#alx1').dblclick(function() {
+        $('#alx1').<?php echo $jq_function; ?>(function() {
           $('#alx1').html('<img src="emojis/happy_emoji.png">');
           if (counter==(images.length-1)) {
             if (sessionStorage.getItem("quest_ordinal") === null) {
@@ -125,10 +150,10 @@
             prep_challenge();
           }
         });
-        $('#alx2').dblclick(function() {
+        $('#alx2').<?php echo $jq_function; ?>(function() {
           $('#alx2').html('<img src="emojis/sad_emoji.png">');
         });
-        $('#alx3').dblclick(function() {
+        $('#alx3').<?php echo $jq_function; ?>(function() {
           $('#alx3').html('<img src="emojis/sad_emoji.png">');
         });
         prep_challenge();
@@ -150,8 +175,8 @@
             $("#alx2").insertBefore($("#alx1")); 
             $("#alx3").insertBefore($("#alx2")); 
         }
-        $('#alx_header').html('Από τι γράμμα ξεκινά η λέξη; ' + (counter+1) + '/' + images.length);
-        $('#alx0').html('<img width="400" height="200" src="pc_parts/' + images[counter][0] + '">');
+        $('#alx_header').html('<?php echo $description; ?> ' + (counter+1) + '/' + images.length);
+        $('#alx0').html('<img width="400" height="200" src="<?php echo $url_subfolder; ?>/' + images[counter][0] + '">');
         $('#alx1').html('<img src="letters/' + images[counter][1] + '.png">');
         $('#alx2').html('<img src="letters/' + images[counter][2] + '.png">');
         $('#alx3').html('<img src="letters/' + images[counter][3] + '.png">');
