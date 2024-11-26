@@ -34,5 +34,32 @@
           { "image" : "keyboard0.jpg", "letter0" : "Π", "letter1" : "Α", "letter2" : "Β" },
           { "image" : "monitor0.jpg", "letter0" : "Ο", "letter1" : "Ε", "letter2" : "Ζ" }
          ]
-      }
+    },
+    {
+      "id": "a003",
+      "description" : "Βρες το γράμμα που ξεκινά το ζώο",
+      "url_subfolder" : "animals",
+      "jquery_function" : "dblclick",
+      "images" : [
+        { "image" : "baboon.jpg", "letter0" : "Μ", "letter1" : "Ι", "letter2" : "Η" },
+        { "image" : "bat.jpg", "letter0" : "Ν", "letter1" : "Ξ", "letter2" : "Μ" },
+        { "image" : "bear.jpg", "letter0" : "Α", "letter1" : "Γ", "letter2" : "Β" },
+        { "image" : "butterfly.jpg", "letter0" : "Π", "letter1" : "Β", "letter2" : "Β" },
+        { "image" : "camel.jpg", "letter0" : "Κ", "letter1" : "Μ", "letter2" : "Γ" },
+        { "image" : "castor.jpg", "letter0" : "Κ", "letter1" : "Ρ", "letter2" : "Δ" },
+        { "image" : "crocodile.jpg", "letter0" : "Κ", "letter1" : "Ε", "letter2" : "Ζ" },
+        { "image" : "deer.jpg", "letter0" : "Τ", "letter1" : "Ω", "letter2" : "Χ" },
+        { "image" : "dolphin.jpg", "letter0" : "Δ", "letter1" : "Η", "letter2" : "Ψ" },
+        { "image" : "duck.jpg", "letter0" : "Π", "letter1" : "Ο", "letter2" : "Υ" },
+        { "image" : "frog.jpg", "letter0" : "Β", "letter1" : "Θ", "letter2" : "Ω" },
+        { "image" : "koala.jpg", "letter0" : "Κ", "letter1" : "Φ", "letter2" : "Π" },
+        { "image" : "lion.jpg", "letter0" : "Λ", "letter1" : "Χ", "letter2" : "Ρ" },
+        { "image" : "lizzard.jpg", "letter0" : "Σ", "letter1" : "Ζ", "letter2" : "Τ" },
+        { "image" : "monkey.jpg", "letter0" : "Μ", "letter1" : "Φ", "letter2" : "Ν" },
+        { "image" : "tucan.jpg", "letter0" : "Τ", "letter1" : "Χ", "letter2" : "Ι" },
+        { "image" : "turtle.jpg", "letter0" : "Χ", "letter1" : "Α", "letter2" : "Η" },
+        { "image" : "whale.jpg", "letter0" : "Φ", "letter1" : "Α", "letter2" : "Θ" },
+        { "image" : "zebra.jpg", "letter0" : "Ζ", "letter1" : "Α", "letter2" : "Ω" }
+       ]
+    }
 ]
